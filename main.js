@@ -18,18 +18,3 @@ function modelLoaded(){
     console.log("Model Loaded!");
 }
 
-function Identify(){
-    img = document.getElementById("Image");
-    classifier.classify(img, gotResult);
-}
-
-function gotResult(error, results){
-    if(error){
-        console.error(error);
-    }
-    else{
-        console.log(results);
-    }
-    document.getElementById("Object_output").innerHTML = results[0].label;
-document.getElementById("Accuracy").innerHTML = results[0].confidence.toFixed(3);
-}
